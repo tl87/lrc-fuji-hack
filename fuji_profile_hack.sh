@@ -22,7 +22,7 @@ if [ $answ = "no" ]; then
 	echo "Will exit now"
 	exit 0
 else
-	sleep 1s
+	sleep 1
 fi
 
 # Clear console
@@ -39,7 +39,7 @@ echo "Doing a BackUp of Fujifilm X-T4 folder"
 cd /Applications/Adobe\ Lightroom\ Classic/Adobe\ Lightroom\ Classic.app/Contents/Resources/Settings/Adobe/Profiles/Camera/Fujifilm/
 cp -r Fujifilm\ X-T4/ ~/Desktop/Fujifilm\ X-T4\ BackUp/
 echo ""
-sleep 5s
+sleep 5
 
 # Make changes
 echo "Changing xmp files"
@@ -49,7 +49,7 @@ sed -i -e 's/crs:CameraModelRestriction="Fujifilm X-T4"/crs:CameraModelRestricti
 sed -i -e 's/crs:CameraModelRestriction="Fujifilm X-T4"/crs:CameraModelRestriction=""/1' Fujifilm\ X-T4\ Camera\ Sepia.xmp
 rm *.xmp-e
 echo ""
-sleep 5s
+sleep 5
 
 # Done
 if [ $(cat Fujifilm\ X-T4\ Camera\ BLEACH\ BYPASS.xmp | grep 'CameraModelRestriction') = 'crs:CameraModelRestriction=""' ]; then
